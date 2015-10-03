@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ Roster\ "Main"\ program\r\n
+comment1.params=
+comment1.target=void\ roster()
+comment2.params=studentID\ firstname\ lastname\ emailaddress\ age\ grade1\ grade2\ grade3
+comment2.target=void\ add(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment3.params=studentID
+comment3.target=void\ remove(java.lang.String)
+comment4.params=
+comment4.target=void\ print_all()
+comment5.params=studentID
+comment5.target=void\ averageGrade(java.lang.String)
+comment6.params=
+comment6.target=void\ print_invalid_emails()
+comment7.params=
+comment7.target=void\ clear()
+numComments=8

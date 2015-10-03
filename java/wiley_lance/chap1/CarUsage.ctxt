@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CarUsage()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CarUsageWorkPersonal\r\n
+comment1.params=
+comment1.target=void\ calculation()
+comment1.text=\r\n\ Calculation\ method\r\n\ \r\n\ @param\ \ accountBase\ \ \ initial\ amount\ of\ cash\ added\ to\ the\ account.\r\n\ @param\ \ monthyIntrest\ \ \ monthly\ intrest\ accrual.\r\n\ @param\ \ monthlyWithdrawl\ \ \ amount\ withdrawn\ from\ the\ account\ for\ bills.\r\n\ @param\ \ years\ \ \ storage\ variable\ for\ number\ of\ years.\r\n\ @param\ \ months\ \ \ storage\ variable\ for\ number\ of\ months.\r\n\ @return\ \ output\ \ number\ of\ years\ and\ months\ to\ depleate\ the\ account.\r\n
+comment2.params=y
+comment2.target=int\ calculation(int)
+comment3.params=
+comment3.target=void\ sysClear()
+numComments=4

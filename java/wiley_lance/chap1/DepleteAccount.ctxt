@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DepleteAccount()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DepleteAccount\r\n
+comment1.params=
+comment1.target=java.lang.String\ calculate()
+comment1.text=\r\n\ Calculation\ method\r\n\ \r\n\ @param\ \ accountBase\ \ \ initial\ amount\ of\ cash\ added\ to\ the\ account.\r\n\ @param\ \ monthyIntrest\ \ \ monthly\ intrest\ accrual.\r\n\ @param\ \ monthlyWithdrawl\ \ \ amount\ withdrawn\ from\ the\ account\ for\ bills.\r\n\ @param\ \ years\ \ \ storage\ variable\ for\ number\ of\ years.\r\n\ @param\ \ months\ \ \ storage\ variable\ for\ number\ of\ months.\r\n\ @return\ \ output\ \ number\ of\ years\ and\ months\ to\ depleate\ the\ account.\r\n
+comment2.params=accountBase\ monthlyIntrest\ monthlyWithdrawl
+comment2.target=java.lang.String\ calculateTerminate(int,\ double,\ int)
+comment2.text=\r\n\ Calculation\ method2\r\n\ \r\n\ Allow\ user\ to\ input\ the\ accountBase,\ monthlyInterest,\ and\ withdrawlAmount\r\n\ @param\ \ years\ \ \ storage\ variable\ for\ number\ of\ years.\r\n\ @param\ \ months\ \ \ storage\ variable\ for\ number\ of\ months.\r\n\ @return\ \ output\ \ number\ of\ years\ and\ months\ to\ depleate\ the\ account.\r\n
+comment3.params=
+comment3.target=void\ sysClear()
+numComments=4

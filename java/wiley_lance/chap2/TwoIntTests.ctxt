@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=TwoIntTests()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ TwoIntTests\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=one\ two
+comment2.target=void\ twoInts(int,\ int)
+comment2.text=\n\ gather\ ints\ and\ then\ do\ various\ thing\ to\ them\n\ \n\ @param\ \ one\ \ first\ int\n\ @param\ \ two\ \ second\ int\n\ no\ return\ at\ this\ time\ //\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
+comment3.params=
+comment3.target=void\ sysClear()
+numComments=4
