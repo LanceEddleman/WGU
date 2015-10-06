@@ -37,13 +37,6 @@ public class Change
         change.sysClear();
         change.selection();
     }
-
-    public void selection()
-    {
-        items();
-        selectItem();
-        testSelection();
-    }
     
     /**
      * 
@@ -56,9 +49,22 @@ public class Change
         return x + y;
     }
 
+        public void selection()
+    {
+        items();
+        selectItem();
+        testSelection();
+    }
+        public void errorSelection()
+    {
+        items();
+        errorSelectItem();
+        testSelection();
+    }
+
     public void selectItem()
     {
-        System.out.printf("Enter the item number you want to purchase\n");
+        System.out.printf("Enter the number of the item you want to purchase\n");
         Scanner userInput = new Scanner(System.in); //construct scanner
         while(!userInput.hasNextInt()){
             if (errorCount >= 2)
@@ -66,6 +72,31 @@ public class Change
                 errorCount = 0;
                 sysClear();
                 selection();
+
+            }
+            errorCount++;
+            System.out.println("Input was not a number");
+            System.out.println("Please make another selection");
+            userInput.next(); // input invalid, try again
+        }
+        int userSelection = userInput.nextInt();
+        userInput.close(); //close scanner
+        this.userSelection = userSelection;
+        // return userSelection;
+    }
+
+        public void errorSelectItem()
+    {
+        System.out.printf("Enter the number of the item you want to purchase\n");
+        Scanner userInput = new Scanner(System.in); //construct scanner
+        while(!userInput.hasNextInt()){
+            if (errorCount >= 2)
+            {
+                errorCount = 0;
+                sysClear();
+                System.out.println("Input was not a valid item");
+                System.out.println("Please make another selection");                
+                errorSelection();
 
             }
             errorCount++;
@@ -102,6 +133,7 @@ public class Change
         else
         {
             sysClear();
+            errorSelectItem();
             selection();
         }
         // next step for number of items to purchase
