@@ -231,9 +231,9 @@ public class Change
         System.out.println();
         
         premainder = (cost*100) % 100;
-        System.out.println("base pennies: " + premainder);
+        System.out.printf("pennies: %.0f\n", premainder);
         pbase = (int)cost*100;
-        System.out.println("base: " + pbase);
+        System.out.printf("base: %.0f\n", pbase);
         
         pennies = (int)pbase+(int)premainder;
         this.pennies = pennies;
