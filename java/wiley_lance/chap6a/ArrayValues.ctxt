@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ArrayValues()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ ArrayValues\n
+comment1.params=
+comment1.target=void\ aValues()
+comment1.text=\n\ Item\ (a)\n
+comment2.params=
+comment2.target=void\ bValues()
+comment2.text=\n\ Item\ (b)\n
+comment3.params=
+comment3.target=void\ cValues()
+comment3.text=\n\ Item\ (c)\n
+comment4.params=
+comment4.target=void\ dValues()
+comment4.text=\n\ Item\ (d)\n
+comment5.params=
+comment5.target=void\ eValues()
+comment5.text=\n\ Item\ (e)\n
+comment6.params=
+comment6.target=void\ fValues()
+comment6.text=\n\ Item\ (f)\n
+comment7.params=
+comment7.target=void\ gValues()
+comment7.text=\n\ Item\ (g)\n
+numComments=8
