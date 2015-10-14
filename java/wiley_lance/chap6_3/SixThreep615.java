@@ -1,4 +1,5 @@
-
+import java.util.Random;
+import java.util.Arrays;
 /**
  * P6.15    
  * Write a program that produces ten random permutations of the numbers 1 to 10. 
@@ -15,7 +16,7 @@
 public class SixThreep615
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private static int arrayLength;
 
     /**
      * Constructor for objects of class SixThreep615
@@ -23,18 +24,39 @@ public class SixThreep615
     public SixThreep615()
     {
         // initialise instance variables
-        x = 0;
+        arrayLength = 5;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public static void arrayRemoveItem()
     {
-        // put your code here
-        return x + y;
+        SixThreep615 Length = new SixThreep615();
+        System.out.printf("Create %s item array, initialiaze with random numbers\n",arrayLength);
+        int[] baseNumbers = new int[SixThreep615.arrayLength];
+        for(int i=0;i<arrayLength;i++)
+        {
+            Random rand = new Random();  
+            int pickedNumber = rand.nextInt(10);
+            baseNumbers[i] = pickedNumber;
+            System.out.println("index: " + i + " | number: " + baseNumbers[i]);
+        }
+        
+        int position = 2;
+        int size = baseNumbers.length;
+        
+        System.out.println("Index item to remove is: " + position + " holding value: " + baseNumbers[position]);
+        System.out.println("Current array length is: " + size);
+        System.out.println("index: " + position + " | number: " + baseNumbers[position]);
+        
+        for (int i = position+1; i < size; i++)
+        {
+            baseNumbers[i-1] = baseNumbers[i];
+            System.out.println("index: " + i + " | number: " + baseNumbers[i]);
+        }
+        size--;
+        System.out.println("Current array length is: " + size);
+        for(int i=0;i<size;i++)
+        {
+            System.out.println("index: " + i + " | number: " + baseNumbers[i]);
+        }
     }
 }
