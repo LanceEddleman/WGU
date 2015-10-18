@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=numberOfInputs
+comment1.target=double[]\ readInputs(int)
+comment1.text=\r\n\ \ \ \ \ \ Reads\ a\ sequence\ of\ floating-point\ numbers.\r\n\ \ \ \ \ \ @param\ numberOfInputs\ \ the\ number\ of\ inputs\ to\ read\r\n\ \ \ \ \ \ @return\ an\ array\ containing\ the\ input\ values\r\n
+comment2.params=values\ factor
+comment2.target=void\ multiply(double[],\ double)
+comment2.text=\r\n\ \ \ \ \ \ \ Multiplies\ all\ elements\ of\ an\ array\ by\ a\ factor.\r\n\ \ \ \ \ \ @param\ values\ an\ array\r\n\ \ \ \ \ \ @param\ factor\ the\ value\ with\ which\ element\ is\ multiplied\r\n
+comment3.params=values
+comment3.target=void\ printReversed(double[])
+comment3.text=\r\n\ \ \ \ \ \ Prints\ an\ array\ in\ reverse\ order.\r\n\ \ \ \ \ @param\ values\ an\ array\ of\ numbers\r\n\ \ \ \ \ @return\ an\ array\ that\ contains\ the\ elements\ of\ values\ in\ reverse\ order\r\n
+numComments=4

@@ -17,7 +17,6 @@ import java.util.Arrays;
 public class SixThreep615
 {
     // instance variables - replace the example below with your own
-    private static int len;
 
     /**
      * Constructor for objects of class SixThreep615
@@ -25,44 +24,68 @@ public class SixThreep615
     public SixThreep615()
     {
         // initialise instance variables
-        len = 4;
     }
 
     public static void arrayPermutation()
     {
         SixThreep615 len = new SixThreep615();
-        System.out.printf("Create %s item array, initialiaze with random numbers\n",len);
-        
-        int k = 0;
-        int select = 0;
-        int createbase = 0;
-        
+        System.out.println("Create an item array, randomly place each number into a new array");
+        int[] base = {1,2,3,4,5,6,7,8,9,10};
         int[] baseNumbers = {1,2,3,4,5,6,7,8,9,10};
-        int[] arrayB = new int[len.len];
-        int[] perm = new int[len.len];
-        
-        Random rand = new Random();  
-        for(int i=1; i<len.len+1; i++)
+        int size = baseNumbers.length;
+        int[] perm = new int[10];
+        int pos = 0;
+
+        for(int i = 0; i<baseNumbers.length;i++)
         {
-            System.out.println("Random set: " + i);
-            for(int j=0; j<len.len;j++)
+            System.out.println("Index: " + i + " | Number: " + baseNumbers[i]);
+        }
+        for(int i = 0; i < baseNumbers.length; i++)
+        {
+            Random rand = new Random();
+            int picked = rand.nextInt(size); System.out.println("pos picked: " + picked);
+            System.out.println("baseNumbers: " + picked + " value of: " + baseNumbers[picked]);
+            perm[i] = baseNumbers[picked]; System.out.println("Perm index: " + i + " | Number: " + perm[i]);
+            pos = picked;
+            System.out.println("baseNumbers index " + pos + " to be removed");
+
+            for(int b = pos; b < baseNumbers.length ;b++)
             {
-                int pickedNumber = rand.nextInt(10)+1;
-                baseNumbers[j] = pickedNumber;
-                System.out.println("index: " + j + " | number: " + baseNumbers[j]);
+                if(pos == baseNumbers.length)
+                {
+                    System.out.println("last item no change needed");
+                }
+                else
+                {
+                    for(int u = pos; u < baseNumbers.length-1; u++)
+                    {
+                        System.out.println("baseNumbers[pos] " + u + " was value: " + baseNumbers[u]);
+                        baseNumbers[u] = baseNumbers[u+1];
+                        System.out.println("baseNumbers[pos] " + u + " now: " + baseNumbers[u]);
+                    }
+                    size = size - 1;
+                    break;
+                }
+            }
+            System.out.println("new length: " + size);
+            System.out.println("index of perm: " + i + " | number: " + perm[i]);
+            System.out.println("base");
+            for(int x = 0; x<size;x++)
+            {
+                System.out.println(x + " | " + baseNumbers[x]);
             }
             System.out.println();
-//            (int)(Math.random() * (max - min) + min)
-            k++;
+        }
+        System.out.println("Base Array");
+        for(int l=0;l<perm.length;l++)
+        {
+            System.out.println(l + " | " + base[l]);
         }
         System.out.println();
-        System.out.println("index: " + (k-1) + " | random: " + baseNumbers[k-1] + " | base: " + arrayB[k-1] + " | perm: " + perm[k-1]);
-        /*
-        for(int i = 0; i < arrayB.length; i++)
+        System.out.println("New random Array");
+        for(int l=0;l<perm.length;l++)
         {
-            arrayB[i] = baseNumbers[rand.nextInt(10)];
-            System.out.println("index: " + i + " | base: " + baseNumbers[i] + " | NewItem: " + arrayB[i]);
+            System.out.println(l + " | " + perm[l]);
         }
-        */
     }
 }
