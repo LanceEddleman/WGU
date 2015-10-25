@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=How2()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ How2\r\n\ hidden\ elements\ to\ use\ in\ all\ locations\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ findLow()
+comment2.text=\r\n\ Find\ Low\r\n
+comment3.params=
+comment3.target=void\ endScore()
+comment3.text=\r\n\ Create\ End\ Score\r\n
+numComments=4
