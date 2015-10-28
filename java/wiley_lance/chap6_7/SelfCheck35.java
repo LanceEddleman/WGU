@@ -1,15 +1,14 @@
-
+import java.util.Arrays;
 /**
- * 35. 	
-Consider an 8 × 8 array for a board game:
-int[][] board = new int[8][8];
-Using two nested loops, initialize the board so that zeroes and ones alternate, as on a checkerboard:
-0 1 0 1 0 1 0 1
-1 0 1 0 1 0 1 0
-0 1 0 1 0 1 0 1
-. . .
-1 0 1 0 1 0 1 0
-Hint: Check whether i + j is even.
+ * 35. 	Consider an 8 × 8 array for a board game:
+ * int[][] board = new int[8][8];
+ * Using two nested loops, initialize the board so that zeroes and ones alternate, as on a checkerboard:
+ * 0 1 0 1 0 1 0 1
+ * 1 0 1 0 1 0 1 0
+ * 0 1 0 1 0 1 0 1
+ * . . .
+ * 1 0 1 0 1 0 1 0
+ * Hint: Check whether i + j is even.
  * 
  * @author (your name) 
  * @version (a version number or a date)
