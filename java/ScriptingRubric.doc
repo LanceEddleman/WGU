@@ -1,0 +1,793 @@
+﻿<!DOCTYPE html>
+<html 
+	xmlns:o='urn:schemas-microsoft-com:office:office' 
+	xmlns:w='urn:schemas-microsoft-com:office:word'
+	xmlns='http://www.w3.org/TR/REC-html40'>
+<head runat="server">
+    <meta charset="utf-8" />
+	<!--[if gte mso 9]>
+    <xml>
+    <w:WordDocument>
+		<w:View>Print</w:View>
+		<w:Zoom>100</w:Zoom>
+		<w:DoNotOptimizeForBrowser/>
+		<w:Compatibility>
+		   <w:BreakWrappedTables/>
+		</w:Compatibility>
+    </w:WordDocument>
+    </xml>
+    <![endif]-->
+<style type="text/css">
+@page  {
+	size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;
+	font-Family:Verdana, sans-serif;
+}
+
+table.normal
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border-top:windowtext;
+	border-left:white;
+	border-bottom:windowtext;
+	border-right:white;
+	border-style:solid;
+	border-width:1.0pt;
+	mso-border-top-alt:windowtext;
+	mso-border-left-alt:white;
+	mso-border-bottom-alt:windowtext;
+	mso-border-right-alt:white;
+	mso-border-style-alt:solid;
+	mso-border-width-alt:.5pt;
+	mso-padding-alt:5.4pt 5.4pt 5.4pt 5.4pt;
+	mso-border-insideh:.5pt solid white;
+	mso-border-insidev:.5pt solid white;
+	mso-tstyle-shading:white;
+	mso-tstyle-padding:.08in .08in .08in .08in;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+
+H1	{
+	font-Family:Arial, sans-serif;
+	font-size:18pt;
+	margin-bottom:0pt;
+	padding-bottom:0pt;
+}
+H2	{
+	font-Family:Arial, sans-serif;
+	border-bottom:1px #000000 solid;
+	font-size:16pt;
+}
+H3	{
+	font-Family:Arial, sans-serif;
+	border-bottom:1px #000000 dashed;
+	font-size:14pt;
+}
+H4	{
+	font-Family:Verdana, sans-serif;
+	margin-bottom:2pt;
+	font-size:12pt;
+}
+BODY	{
+	font-family:Verdana, sans-serif;
+	font-size:10pt;
+}
+
+.formQuestion	{
+	font-Family:Arial, sans-serif;
+	font-weight:bold;
+	margin-top:16pt;
+	font-size:11pt;
+	page-break-after:avoid;
+}
+.formQuestionDesc	{
+	margin-bottom:4pt;
+	font-size:8pt;
+}
+.formAnswer	{
+	
+}
+.scaleKey	{
+	font-size:8pt;
+	margin-bottom:4pt;
+}
+TABLE .scale	{
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border-top:windowtext;
+	border-left:white;
+	border-bottom:windowtext;
+	border-right:white;
+	border-style:solid;
+	border-width:1.0pt;
+	mso-border-top-alt:windowtext;
+	mso-border-left-alt:white;
+	mso-border-bottom-alt:windowtext;
+	mso-border-right-alt:white;
+	mso-border-style-alt:solid;
+	mso-border-width-alt:.5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt dotted windowtext;
+	mso-border-insidev:.5pt solid white;
+	mso-tstyle-shading:white;
+	mso-tstyle-padding:.05in .05in .05in .05in;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:10.0pt;}
+}
+
+.scale TH	{
+	background-color:#dce2fe;
+}
+UL	{
+	list-style-type:none;
+}
+</style>
+    <base href="https://w.taskstream.com"/>
+    <script type="text/javascript" src="/JsLoad?isUpwardsRecursive=True&namespaces=TS.UI.%2A&namespaces=TS.Rubric.%2A&namespaces=TS&namespaces=TS.Sayg.%2A&namespaces=TS.Standards.%2A&namespaces=TS.AspWrapper.%2A&namespaces=TS.Utils.%2A"></script>
+	<script type="text/javascript">
+		$(function () {
+			TS.AspWrapper.SetMainNavId('tab_rubric');
+		});
+	</script>
+
+    
+
+		<style type="text/css">
+/*===========================================================================
+===========================================================================
+
+These styles apply to LAT and AMS Rubrics and may not be overridden by any
+OA-specific style sheets. Colors are set at the platform or OA level
+
+===========================================================================
+===========================================================================*/
+
+/*===========================================================================
+Matrix view  
+===========================================================================*/
+@page section1 {
+	size:11.0in 8.5in;
+	mso-page-orientation:landscape;
+	margin:.5in .5in .5in .5in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;
+	font-Family:Arial, sans-serif;
+}
+
+.rubric	{
+	page:Section1;
+}
+.rubric TABLE	{
+	mso-style-name:"Table Grid";
+	border-collapse:collapse;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border-top:windowtext;
+	border-left:black;
+	border-bottom:windowtext;
+	border-right:black;
+	border-style:solid;
+	border-width:1.0pt;
+	mso-border-top-alt:windowtext;
+	mso-border-left-alt:black;
+	mso-border-bottom-alt:windowtext;
+	mso-border-right-alt:black;
+	mso-border-style-alt:solid;
+	mso-border-width-alt:.5pt;
+	mso-padding-alt:5.4pt 5.4pt 5.4pt 5.4pt;
+	mso-border-insideh:.5pt solid black;
+	mso-border-insidev:.5pt solid black;
+	mso-tstyle-padding:.04in .04in .04in .04in;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	font-size:9pt;
+	font-Family:Arial, Arial,sans-serif;
+	}
+}
+.maxedRubric	{ /* decrease font size when rubrics are more than 5 columns */
+	font-size:8pt !important;
+}
+.label {
+	border-top:white;
+	border-left:white;
+	mso-border-left-alt:white;
+	mso-border-top-alt:white;
+}
+.level
+{
+	background-color:#eaeaea;
+}
+.score
+{
+	background-color:#e5ffe1;
+	vertical-align:top;
+}
+.form
+{
+	background-color:#eaeaea;
+	vertical-align:top;
+}
+.criteria
+{
+	vertical-align:top;
+	background-color:#ccffff;
+}
+.cell {
+	vertical-align:top;
+}
+.cellNoStandards {
+	vertical-align:top;
+}
+.standards	{
+	vertical-align:top;
+	font-size:9pt;
+}
+
+DIV.itemList
+{
+    border-bottom:none;
+}
+
+</style>
+
+    <script type="text/javascript">
+            
+        if(typeof(TS) != 'undefined' &&  TS && TS.SpellChecker)
+            TS.SpellChecker.SetLegacySessionId('');
+
+    </script>
+</head>
+<body>
+
+    <div id="divSiteContentHolder">
+		
+        
+        
+        
+
+
+    <h1 class="noBackground">
+		<a href="http://www.taskstream.com" target="_blank"><img src="https://w.taskstream.com/Content/css/Global/Images/Logos/CreatedWithTaskStream-On.gif" alt="Created with Taskstream" border="0" align="right" /></a>
+		<span id="rubricTitle">VGT Task 1</span>
+		
+        
+
+	</h1>
+
+    <form action="/RubricWizard/Rubric" id="RubricForm" method="post" name="RubricForm" onsubmit="return false">
+<div class="rubric">
+
+    <table id="rubricTable" >
+		<thead>
+	    <tr style='mso-yfti-firstrow:yes'>
+            
+		    <th class="label" valign="top"  style="min-width:120px;">
+				
+            </th>
+		    	<!-- TECHNICAL DEBT: ignore display col numbers but use current visual orders to save -->
+            
+		        <th class="level" id="lblLabelHead1"style="width:33%">
+			        
+                                         value: 0.00
+                                
+		        </th>
+		    
+		        <th class="level" id="lblLabelHead2"style="width:33%">
+			        
+                                         value: 1.00
+                                
+		        </th>
+		    
+		        <th class="level" id="lblLabelHead3"style="width:33%">
+			        
+                                         value: 2.00
+                                
+		        </th>
+		    
+                <th class="score" style="min-width:80px;">Score/Level</th>
+            
+	    </tr>
+		</thead>
+        
+            <tr >
+				
+                <td  class="criteria">
+                    Articulation of Response (clarity, organization, mechanics)<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides unsatisfactory articulation of response.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides limited articulation of response.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides substantial articulation of response.<br>
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    A. Personal Information<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide personal information in the last item of the students[] array.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate incorrectly provides personal information in the last item of the students[] array.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate correctly provides personal information in the last item of the students[] array.<br>
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B. Student Roster Program<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide a program that converts the array of Strings to an ArrayList of Student objects.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            Not applicable.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides a program that converts the array of Strings to an ArrayList of Student objects.<br>
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B1. Instance Variables<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide instance variables that describe each student for the given points.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides inappropriate instance variables that describe each student for the given points.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides appropriate instance variables that describe each student for the given points.<br>
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B2a. Accessor<br><br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide an accessor in the <font face="courier" size="2">Student</font> class for <i>each</i> instance variable from part B1.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate incorrectly provides an accessor in the <font face="courier" size="2">Student</font> class for <i>each</i>  instance variable from part B1.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate correctly provides an accessor in the <font face="courier" size="2">Student</font> class for <i>each</i>  instance variable from part B1.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B2b. Mutator<br><br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide a mutator in the <font face="courier" size="2">Student</font> class for <i>each</i>  instance variable from part B1.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate incorrectly provides a mutator in the <font face="courier" size="2">Student</font> class for <i>each</i>  instance variable from part B1.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate correctly provides a mutator in the <font face="courier" size="2">Student</font> class for <i>each</i>  instance variable from part B1.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B2c. Constructor<br><br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide a constructor in the <font face="courier" size="2">Student</font> class using <i>any</i> of the input parameters.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides a constructor in the <font face="courier" size="2">Student</font> class using some of the input parameters.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides a constructor in the <font face="courier" size="2">Student</font> class using <i>all</i> the input parameters.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B2d. Printing Specific Data<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide a <font face="courier" size="2">print()</font> method in the <font face="courier" size="2">Student</font> class to print specific student data using accessors.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate incorrectly provides a <font face="courier" size="2">print()</font> method in the <font face="courier" size="2">Student</font> class to print specific student data using accessors.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate correctly provides a <font face="courier" size="2">print()</font> method in the <font face="courier" size="2">Student</font> class to print specific student data using accessors.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B3a. Add Method<br><br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide a <font face="courier" size="2">public static void add()</font> method in the student roster program that sets the instance variables from part B1 and updates the roster.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate incorrectly provides a <font face="courier" size="2">public static void add()</font>  method in the student roster program that sets the instance variables from part B1 and updates the roster.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate correctly provides a <font face="courier" size="2">public static void add()</font>  method in the student roster program that sets the instance variables from part B1 and updates the roster.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B3b. Remove Method<br><br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide a <font face="courier" size="2">public static void remove(studentID)</font> that removes students from the roster by student ID.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate incorrectly provides a <font face="courier" size="2">public static void remove(studentID)</font> that removes students from the roster by student ID.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does provide a <font face="courier" size="2">public static void remove(studentID)</font> that removes students from the roster by student ID.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B3c. Print All Method<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not <font face="courier" size="2">provide public static void print_all()</font> that prints a tab-separated list of all student data using accessor methods.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides <font face="courier" size="2">provide public static void print_all()</font> that prints an incomplete tab-separated list of student data using accessor methods.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides <font face="courier" size="2">provide public static void print_all()</font> that prints a complete tab-separated list of student data using accessor methods.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B3d. Print Average Method<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not <font face="courier" size="2">provide public static void print_average_grade(String studentID)</font> that prints a student’s average grade by student ID.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides <font face="courier" size="2">provide public static void print_average_grade(String studentID)</font> that incorrectly prints a student’s average grade by student ID.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides <font face="courier" size="2">provide public static void print_average_grade(String studentID)</font> that correctly prints a student’s average grade by student ID.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    B3e. Print Invalid E-mails Method<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not <font face="courier" size="2">provide public static void print_invalid_emails()</font> that verifies student e-mail addresses and displays any invalid e-mail addresses to the user.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides <font face="courier" size="2">provide public static void print_invalid_emails()</font> that verifies student e-mail addresses and displays some invalid e-mail addresses to the user.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides <font face="courier" size="2">provide public static void print_invalid_emails()</font> that verifies student e-mail addresses and displays <i>all</i> invalid e-mail addresses to the user.
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    C1. Output<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate does not provide evidence of the program’s required functionality by attaching the output along with the entire project folder. <br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides evidence of the program’s required functionality by attaching <i>either</i> the output <i>or</i> the entire project folder correctly.
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            The candidate provides evidence of the program’s required functionality by attaching the output along with the entire project folder. <br>
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            
+            <tr >
+				
+                <td  class="criteria">
+                    D. Sources<br><br/>
+       
+                           
+                            
+                            
+					</div>
+                </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            If the candidate uses sources, the candidate does not provide in-text citations and references.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            If the candidate uses sources, the candidate provides appropriate in-text citations and references with major deviations from APA style.<br>
+                        
+		            </td>
+                
+		            <td  class="cellNoStandards" style="background-color:#FFFFFF;">
+			            If the candidate uses sources, the candidate provides appropriate in-text citations and references with no readily detectable deviations from APA style, OR the candidate does not use sources.<br>
+                        
+		            </td>
+                
+                    <td class="score" >&nbsp;</td>
+                
+		
+            </tr>
+            			
+		<tr><td colspan="5"></td></tr>
+    </table>  
+</form>
+</div>
+
+
+
+  <script type="text/javascript">
+      $(function() {
+          if(15 >= 255) {
+              $("#btnImport").attr('class', 'button L2 tandisabled');
+      } else {
+              $("#btnImport").attr('class', 'button orange L2 bold');
+      }
+      $("#btnImport").attr('onclick', "TS.Rubric.CompleteImport('a4cucrcpcyc0cqcs', '4','15','255') ");
+          
+      })
+  </script>
+
+    </div>
+    
+</body>
+</html>
