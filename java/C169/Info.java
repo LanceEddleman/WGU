@@ -6,7 +6,14 @@
  */
 public class Info
 {
-        /**
+
+    //Notes from the class conversaiton wall:
+        //The grades array should be a class variable in the Student class. Your ArrayList<Student> should be in your Roster class. Hope this helps!
+    
+    // no main in students
+    // roster has a main to get things started
+    
+    /**
             Student ID      First Name      Last Name       E-mail                  Age     Grades
                 1           John            Smith           John1989@gmail.com      20      88, 79, 59
                 2           Suzan           Erickson        Erickson_1990@gmailcom  19      91, 72, 85
