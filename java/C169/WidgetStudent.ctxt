@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=id\ name\ numThingiesInWidget\ age
+comment0.target=WidgetStudent(java.lang.String,\ java.lang.String,\ int,\ int)
+comment1.params=
+comment1.target=java.lang.String\ getId()
+comment2.params=id
+comment2.target=void\ setId(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment4.params=name
+comment4.target=void\ setName(java.lang.String)
+comment5.params=
+comment5.target=int\ getNumThingiesInWidget()
+comment6.params=numThingiesInWidget
+comment6.target=void\ setNumThingiesInWidget(int)
+comment7.params=
+comment7.target=int\ getAge()
+comment8.params=age
+comment8.target=void\ setAge(int)
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

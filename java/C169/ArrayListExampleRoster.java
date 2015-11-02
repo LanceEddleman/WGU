@@ -1,18 +1,17 @@
 import java.util.ArrayList;
-public class ArrayListExample {
+public class ArrayListExampleRoster {
 
 	static String[] students = {"1,Doohickey,10,12",
 			"2,Thingamajig,20,17",
 			"3,Whirlygig,5,9"
 	};
 
-	static ArrayList<Widget> mywidgets = new ArrayList<Widget>();
+	static ArrayList<WidgetStudent> mywidgets = new ArrayList<WidgetStudent>();
 
 	public static void main(String[] args) {
-		new ArrayListExample();
+		new ArrayListExampleRoster();
 	}
-	
-	public ArrayListExample() {
+	public ArrayListExampleRoster() {
 
 		for (int i = 0; i < students.length; i++) {
 			String s = students[i];
@@ -23,22 +22,18 @@ public class ArrayListExample {
 			int num = Integer.parseInt(parts[2]);
 			int age = Integer.parseInt(parts[3]);
 
-			Widget w = new Widget(id, name, num, age);
+			WidgetStudent w = new WidgetStudent(id, name, num, age);
 			mywidgets.add(w);
 		}
-		for (Widget w : mywidgets) {
+		for (WidgetStudent w : mywidgets) {
 			System.out.println(w);
 		}
-		
 		remove("2");
-		
 		System.out.println("After removing 2");
-		
-		for (Widget w : mywidgets) {
+		for (WidgetStudent w : mywidgets) {
 			System.out.println(w);
 		}
 	}
-
 	public static void remove(String id) {
 		for (int i = 0; i < students.length; i++) {
 			if (mywidgets.get(i).getId().equals(id)) {
@@ -48,6 +43,4 @@ public class ArrayListExample {
 		}
 		System.out.println("Bad Things happened");
 	}
-
-
 }
