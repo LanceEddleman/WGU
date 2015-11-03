@@ -19,15 +19,14 @@ public class Roster
 
     public static void main(String[] args) {
         clear();
-        // Student student1 = new Student();
-        studentsArrayPrint();
-        roster();
-        print_all();
-        removeStudent(2);
-        print_all();
+        studentsPrintStringArray();  // print the original string array
+        roster();              // create new students ArrayList
+        print_all();           // print all elements from the studentsArrayList
+        // removeStudent(2);      // remove the student ID 2
+        // print_all();           // print all elements from the studentsArrayList
     }
 
-    public static void studentsArrayPrint() {
+    public static void studentsPrintStringArray() {
         System.out.println("Student String Array");
         for (int i = 0; i < students.length; i++) {
             System.out.println("Index " + i + " | Value: " + students[i]);
@@ -50,8 +49,8 @@ public class Roster
             int g2 = Integer.parseInt(parts[6]);
             int g3 = Integer.parseInt(parts[7]);
 
-            Student sw = new Student(studentID, firstName, lastName, emailAddress, age, g1, g2, g3);
-            studentArrayList.add(sw);
+            Student sal = new Student(studentID, firstName, lastName, emailAddress, age, g1, g2, g3);
+            studentArrayList.add(sal);
         }
     }
 
@@ -71,6 +70,8 @@ public class Roster
         {
             System.out.println("The requested studentID is no longer valid");
         }
+
+
     /*
         for (int i = 0; i < students.length; i++) {
             if (studentArrayList.studentID(i) != null) {
@@ -88,18 +89,28 @@ public class Roster
         // Note: Tabs can be formatted as such: 1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab] Grades: {88, 79, 59}. 
         // The print_all() method should loop through all the students in the student array list and call the print() method for each student.
         System.out.println("Print All Student(s) Information");
-        for (Student w : studentArrayList) { // enhanced loop to read and print new studentArrayList values
-            System.out.println(w);
-        }
+//        for (Student w : studentArrayList) { // enhanced loop to read and print new studentArrayList values
+//            System.out.println(w);
+//        }
 
-        /*
-        for(int i=0; i<studentArrayList.size(); i++)
+        for(int i = 0; i<studentArrayList.size(); i++)
         {
-            int studentID = Integer.parseInt(students[0]);
-            System.out.println("Expected: " + (42+i));
-            System.out.println(studentArrayList(getStudentID(i)+42);
+            System.out.println(studentArrayList.get(i));
         }
-        */
+//        for(int i=0; i<studentArrayList.size(); i++)
+//        {
+//            int studentID = Integer.parseInt(studentArrayList.getStudentID(0));
+//            System.out.println("Expected: " + (42+i));
+//            System.out.println(studentArrayList.getStudentID(i));
+//        }
+    }
+
+    public static void printStudent(int studentID) {
+        // Prints a complete tab-separated list of student data using accessor methods
+        // Note: Tabs can be formatted as such: 1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab] Grades: {88, 79, 59}.
+        // The print_all() method should loop through all the students in the student array list and call the print() method for each student.
+        System.out.println("Print All Student(s) Information");
+        System.out.println(studentArrayList.get(studentID));
     }
 
     // 3.d Average Grades
@@ -109,14 +120,14 @@ public class Roster
         // personal touch, list studentID, first name, grades, [average] in  tabbed format, add color for average
     }
 
-    // 3.e Average Grades
+    // 3.e Invalid Emails
     public static void print_invalid_emails()
     {
         // Verifies student e-mail addresses, displays all invalid e-mail addresses to the user
         // Note: valid e-mail checks: should include an at sign (“@”) and period (“.”) and doesn’t include a space.
     }
 
-    // console clear
+    // Clear console
     public static void clear() {
         Student clear = new Student();
         clear.cls();

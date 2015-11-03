@@ -1,18 +1,18 @@
 /**
  * ****************** Write a description of class student here.
  *
- *
  * Created with IntelliJ IDEA.
  * User: LanceEddleman
  * Date: 11/1/15
  * Time: 2:40 PM
+ *
  **/
 
 // ======================================================================
 
 /**
- * Write a description of class student here.
  *
+ * Write a description of class student here.
  * @author (Lance Eddleman)
  * @version (v 1.0 - 09/01/2015)
  */
