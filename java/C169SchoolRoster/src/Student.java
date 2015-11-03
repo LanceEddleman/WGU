@@ -19,68 +19,89 @@
 public class Student
 {
     // B.1 instance variables not initialized.
-    private int studentID;
+    private String studentID;
     private String firstName;
     private String lastName;
     private String emailAddress;
     private int age;
     //  private ArrayList [] grades;
-    private int g1;
-    private int g2;
-    private int g3;
+    private int grade1;
+    private int grade2;
+    private int grade3;
 
-    // B.2.c. base constructor used for start point (individual function call validation)constructor using all of the input parameters
+    // B.2.c. base constructor
+    // Used for clear screen and color
     public Student() {
-        System.out.println();
-//        System.out.println("Base constructor");
+        //  System.out.println();
     }
 
     // B.2.c+. base constructor using all of the input parameters
-    public Student(int studentID, String firstName, String lastName, String emailAddress, int age, int g1, int g2, int g3) {
+    public Student(String studentID, String firstName, String lastName, String emailAddress, int age, int grade1, int grade2, int grade3) {
     // public Student(int studentID, String firstName, String lastName, String emailAddress, int age, ArrayList[] grades) { // Remove this line before submission
         // student info
         this.studentID = studentID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
-        this.g1 = g1;
-        this.g2 = g2;
-        this.g3 = g3;
+        this.age = age;
+        this.grade1 = grade1;
+        this.grade2 = grade2;
+        this.grade3 = grade3;
         //  this.grades = grades; // Remove this line before submission
-        // System.out.println("Full constructor: " + studentID + " " + firstName + " " + lastName + " " + emailAddress + " " + age + " " + g1 + " " + g2 + " " + g3);
+        // System.out.println("Full constructor: " + studentID + " " + firstName + " " + lastName + " " + emailAddress + " " + age + " " + grade1 + " " + grade2 + " " + grade3);
         // toString();
     }
 
     // All access and change to the instance variables of the Student class should be through mutator methods.
     // B.2.a  -  Starting Getters:  (accessors)
-    public int getStudentID() { return studentID; }
+    public String getStudentID() { return studentID; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getEmailAddress() { return emailAddress; }
     public int getAge() { return age; }
-    public int getG1() {return g1; }
-    public int getG2() {return g2; }
-    public int getG3() {return g3; }
+    public int getGrade1() {return grade1; }
+    public int getGrade2() {return grade2; }
+    public int getGrade3() {return grade3; }
     // public ArrayList[] getGrades() {return grades; } // Remove this line before submission
 
     // B.2.a  -  Starting Setters: (mutators)
-    public void setStudentID(int studentID) { this.studentID = studentID; }
+    public void setStudentID(String studentID) { this.studentID = studentID; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
     public void setEmailAddress(String emailAddress) { this.emailAddress = emailAddress; }
     public void setAge(int age) { this.age = age; }
-    public void setG1(int g1) { this.g1 = g1; }
-    public void setG2(int g2) { this.g2 = g2; }
-    public void setG3(int g3) { this.g3 = g3; }
+    public void setGrade1(int grade1) { this.grade1 = grade1; }
+    public void setGrade2(int grade2) { this.grade2 = grade2; }
+    public void setGrade3(int grade3) { this.grade3 = grade3; }
     // public void setGrades(ArrayList[] grades) {this.grades = grades;} // Remove this line before submission
 
     public static void cls() //cleans console prior to next test
     { System.out.print('\u000C'); }
 
-    // print array
-    public String toString() {
-        return studentID + " " + firstName + " " + lastName + " " + emailAddress + " " + age + " " + g1 + " " + g2 + " " + g3;
+    /**
+     * Color information found at:
+     * http://stackoverflow.com/questions/7091003/show-system-out-println-output-with-another-color
+     * https://en.wikipedia.org/wiki/ANSI_escape_code
+     */
+    public static void color() {
+        System.out.println("\033[0m BLACK");
+        System.out.println("\033[31m RED");
+        System.out.println("\033[32m GREEN");
+        System.out.println("\033[33m YELLOW");
+        System.out.println("\033[34m BLUE");
+        System.out.println("\033[35m MAGENTA");
+        System.out.println("\033[36m CYAN");
+        System.out.println("\033[37m WHITE");
     }
 
+    // print array
+    public String toString() {
+        return studentID + "\tFirst Name: " + firstName + "\tLast Name: " + lastName + "\tEMail: " + emailAddress + "\tAge: " + age + "\tGrades: {" + grade1 + ", " + grade2 + ", " + grade3 + "}";
+    }
+
+    // print array
+    public void print() {
+        System.out.println(toString());
+    }
 
 }

@@ -40,82 +40,120 @@ public class Roster
             String s = students[i];
             String[] parts = s.split(",");
 
-            int studentID = Integer.parseInt(parts[0]);
+            String studentID = parts[0];
             String firstName = parts[1];
             String lastName = parts[2];
             String emailAddress = parts[3];
             int age = Integer.parseInt(parts[4]);
-            int g1 = Integer.parseInt(parts[5]);
-            int g2 = Integer.parseInt(parts[6]);
-            int g3 = Integer.parseInt(parts[7]);
+            int grade1 = Integer.parseInt(parts[5]);
+            int grade2 = Integer.parseInt(parts[6]);
+            int grade3 = Integer.parseInt(parts[7]);
 
-            Student sal = new Student(studentID, firstName, lastName, emailAddress, age, g1, g2, g3);
+            Student sal = new Student(studentID, firstName, lastName, emailAddress, age, grade1, grade2, grade3);
             studentArrayList.add(sal);
         }
     }
 
     // 3.a Add Student
-    public static void addStudent(String studentID, String firstname, String lastname, String emailaddress, int age, int grade1, int grade2, int grade3) {
-        // that sets the instance variables from part B1 and updates the roster        
+    public static void add(String studentID, String firstName, String lastName, String emailAddress, int age, int grade1, int grade2, int grade3)
+    {
+        // that sets the instance variables from part B1 and updates the roster
+        Student newS = new Student();
+        newS.setStudentID(studentID);
+        newS.setFirstName(firstName);
+        newS.setLastName(lastName);
+        newS.setEmailAddress(emailAddress);
+        newS.setAge(age);
+        newS.setGrade1(grade1);
+        newS.setGrade2(grade2);
+        newS.setGrade3(grade3);
+        studentArrayList.add(newS);
     }
 
-    // 3.b Remove Student
-    public static void removeStudent(int studentID) {
-        // that removes students from the roster by student ID.
-        // Note: If the student ID doesn’t exist, the method should print an error message indicating that it is not found.
-        // students2.remove(students[2]);
-        // System.out.println("Other: " + students);
-        System.out.println("Number of Students: " + studentArrayList.size());
-        if (studentID >studentArrayList.size())
-        {
-            System.out.println("The requested studentID is no longer valid");
-        }
+    // 3.b Remove Student - Complete
+    public static void remove(String studentID) {
+        // Removes student from the roster by student ID.
+        // Note: If student ID doesn’t exist, method should print an error message indicating that it is not found.
 
+        // System.out.println("Number of Students: " + studentArrayList.size());
 
-    /*
-        for (int i = 0; i < students.length; i++) {
-            if (studentArrayList.studentID(i) != null) {
+        for (int i = 0; i < studentArrayList.size(); i++) {
+            Student r = studentArrayList.get(i);
+            if (r.getStudentID().equals(studentID)) {
                 studentArrayList.remove(i);
+                System.out.println("Student ID: \033[31m" + studentID + "\033[0m was removed");
+                System.out.println();
                 return;
             }
         }
-        System.out.println("Bad Things happened");
-    */
+        System.out.println("Student ID: \033[31m" + studentID + "\033[0m doesn't exist");
     }
 
-    // 3.c Print All
+    // 3.c Print All - Complete
     public static void print_all() {
-        // Prints a complete tab-separated list of student data using accessor methods
-        // Note: Tabs can be formatted as such: 1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab] Grades: {88, 79, 59}. 
-        // The print_all() method should loop through all the students in the student array list and call the print() method for each student.
-        System.out.println("Print All Student(s) Information");
-//        for (Student w : studentArrayList) { // enhanced loop to read and print new studentArrayList values
-//            System.out.println(w);
-//        }
-
-        for(int i = 0; i<studentArrayList.size(); i++)
-        {
-            System.out.println(studentArrayList.get(i));
-        }
-//        for(int i=0; i<studentArrayList.size(); i++)
-//        {
-//            int studentID = Integer.parseInt(studentArrayList.getStudentID(0));
-//            System.out.println("Expected: " + (42+i));
-//            System.out.println(studentArrayList.getStudentID(i));
-//        }
-    }
-
-    public static void printStudent(int studentID) {
         // Prints a complete tab-separated list of student data using accessor methods
         // Note: Tabs can be formatted as such: 1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab] Grades: {88, 79, 59}.
         // The print_all() method should loop through all the students in the student array list and call the print() method for each student.
+        System.out.println("\033[32mStudent Roster (Tabbed)\033[0m");
+
+        for(int i = 0; i<studentArrayList.size(); i++) //Suggested print format [tabs]
+        {   Student s = studentArrayList.get(i);
+            s.print();
+        }
+        System.out.println();
+    }
+
+    // 3.c.ii Print All Tab Separated - Complete
+    public static void print_all_tab() {
+        // Prints a complete tab-separated list of student data using accessor methods
+        // Note: Tabs can be formatted as such: 1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab] Grades: {88, 79, 59}. 
+        // The print_all() method should loop through all the students in the student array list and call the print() it tab separated.
         System.out.println("Print All Student(s) Information");
-        System.out.println(studentArrayList.get(studentID));
+
+        for(int i = 0; i<studentArrayList.size(); i++) //Suggested print format [tabs]
+        {   Student s = studentArrayList.get(i);
+            System.out.println(s.getStudentID() + "\tFirst Name: " + s.getFirstName() + "\tLast Name: " + s.getLastName() + "\tEMail: " + s.getEmailAddress() + "\tAge: " + s.getAge() + "\tGrades: {" + s.getGrade1() + ", " + s.getGrade2() + ", " + s.getGrade3() + "}");
+        }
+        System.out.println();
+        System.out.println();
+    }
+
+    // 3.c.iii Print All Column Formatted - Complete
+    public static void print_all_formatted() {
+        // Prints a complete column formatted list of student data using accessor methods
+        // The print_all() method should loop through all the students in the student array list and formats it in columns.
+        System.out.println("\033[32mStudent Roster (Formatted)\033[0m");
+        System.out.printf("%-5s %-15s %-15s %-25s %-6s %-8s %-8s %-8s\n", "ID", "First Name", "Last Name", "EMail Address", "Age", "Grade1", "Grade2", "Grade3");
+        for(int i = 0; i<studentArrayList.size(); i++)
+        {   Student a = studentArrayList.get(i);
+            System.out.printf("%-5s %-15s %-15s %-25s %-6s %4s %8s %8s\n", a.getStudentID(), a.getFirstName(), a.getLastName(), a.getEmailAddress(), a.getAge(), a.getGrade1(), a.getGrade2(), a.getGrade3());
+        }
+        System.out.println();
+        System.out.println();
+    }
+
+    // 3.c.iv Print Specific Student
+    public static void printStudent(int ID) {
+        // Prints a tab-separated list of a specific student based on passed sutdentID.
+        Student a = studentArrayList.get(ID-1); // studentID  = ID-1 for index reference
+        System.out.println("Suggested print format [tabs]");
+        System.out.println(a.getStudentID() + "\tFirst Name: " + a.getFirstName() + "\tLast Name: " + a.getLastName() + "\teMail: " + a.getEmailAddress() + "\tAge: " + a.getAge() + "\tGrades: {" + a.getGrade1() + ", " + a.getGrade2() + ", " + a.getGrade3() + "}");
+        System.out.println();
+        System.out.println();
+
+        System.out.println("Preferred print format [field formatting]");
+        System.out.printf("%-5s %-15s %-15s %-25s %-6s %-8s %-8s %-8s\n", "ID", "First Name", "Last Name", "eMail", "Age", "Grade1", "Grade2", "Grade3");
+        System.out.printf("%-5s %-15s %-15s %-25s %-6s %4s %8s %8s\n", a.getStudentID(), a.getFirstName(), a.getLastName(), a.getEmailAddress(), a.getAge(), a.getGrade1(), a.getGrade2(), a.getGrade3());
+        System.out.println();
+        System.out.println();
+
+        // System.out.println("System dump [no formatting]");
+        // System.out.println(studentArrayList.get(index));
     }
 
     // 3.d Average Grades
-    public static void averageGrade(String studentID) {
-        System.out.println("test");
+    public static void averageGrade(int studentID) {
+        System.out.println("\033[32m test");
         // public static void print_average_grade(String studentID) that correctly prints a student’s average grade by student ID
         // personal touch, list studentID, first name, grades, [average] in  tabbed format, add color for average
     }
