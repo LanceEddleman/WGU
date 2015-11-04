@@ -20,12 +20,13 @@ public class Roster
     public static void main(String[] args) {
         clear();
         studentsPrintStringArray();  // print the original string array
-        roster();              // create new students ArrayList
-        print_all();           // print all elements from the studentsArrayList
-        // removeStudent(2);      // remove the student ID 2
-        // print_all();           // print all elements from the studentsArrayList
+        roster();                    // create new students ArrayList
+        print_all();                 // print all elements from the studentsArrayList
+        // removeStudent(2);         // remove the student ID 2
+        // print_all();              // print all elements from the studentsArrayList
     }
 
+    // Basic print for original String Array
     public static void studentsPrintStringArray() {
         System.out.println("Student String Array");
         for (int i = 0; i < students.length; i++) {
@@ -54,7 +55,7 @@ public class Roster
         }
     }
 
-    // 3.a Add Student
+    // 3.a Add Student - Check with Mike to see if this is the right way to do it
     public static void add(String studentID, String firstName, String lastName, String emailAddress, int age, int grade1, int grade2, int grade3)
     {
         // that sets the instance variables from part B1 and updates the roster
@@ -129,7 +130,6 @@ public class Roster
             System.out.printf("%-5s %-15s %-15s %-25s %-6s %4s %8s %8s\n", a.getStudentID(), a.getFirstName(), a.getLastName(), a.getEmailAddress(), a.getAge(), a.getGrade1(), a.getGrade2(), a.getGrade3());
         }
         System.out.println();
-        System.out.println();
     }
 
     // 3.c.iv Print Specific Student
@@ -139,23 +139,28 @@ public class Roster
         System.out.println("Suggested print format [tabs]");
         System.out.println(a.getStudentID() + "\tFirst Name: " + a.getFirstName() + "\tLast Name: " + a.getLastName() + "\teMail: " + a.getEmailAddress() + "\tAge: " + a.getAge() + "\tGrades: {" + a.getGrade1() + ", " + a.getGrade2() + ", " + a.getGrade3() + "}");
         System.out.println();
-        System.out.println();
 
         System.out.println("Preferred print format [field formatting]");
         System.out.printf("%-5s %-15s %-15s %-25s %-6s %-8s %-8s %-8s\n", "ID", "First Name", "Last Name", "eMail", "Age", "Grade1", "Grade2", "Grade3");
         System.out.printf("%-5s %-15s %-15s %-25s %-6s %4s %8s %8s\n", a.getStudentID(), a.getFirstName(), a.getLastName(), a.getEmailAddress(), a.getAge(), a.getGrade1(), a.getGrade2(), a.getGrade3());
         System.out.println();
-        System.out.println();
-
-        // System.out.println("System dump [no formatting]");
-        // System.out.println(studentArrayList.get(index));
     }
 
-    // 3.d Average Grades
-    public static void averageGrade(int studentID) {
-        System.out.println("\033[32m test");
+    // 3.d Average Grades - Check with Mike to see if this is the right way to do it
+    public static void print_average_grade(int studentID) {
+        System.out.println("\033[32m average grade test print");
         // public static void print_average_grade(String studentID) that correctly prints a student’s average grade by student ID
         // personal touch, list studentID, first name, grades, [average] in  tabbed format, add color for average
+
+        System.out.println("\033[32mStudent Average Grade (Formatted)\033[0m");
+        System.out.printf("%-5s %-15s %-8s %-8s %-8s %-10s\n", "ID", "First Name", "Grade1", "Grade2", "Grade3",
+                "[Average]");
+        Student a = studentArrayList.get(studentID-1); // studentID  = ID-1 for index reference
+        System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(),a.getFirstName(),a.getGrade1(),
+                a.getGrade2(),a.getGrade3(),a.getAverage());
+
+        // Add if, for the index selection, if it is not found or higher then size then give message out of range or
+        // does not exist
     }
 
     // 3.e Invalid Emails
@@ -163,6 +168,8 @@ public class Roster
     {
         // Verifies student e-mail addresses, displays all invalid e-mail addresses to the user
         // Note: valid e-mail checks: should include an at sign (“@”) and period (“.”) and doesn’t include a space.
+
+        // review chapter 4.7.3 for character matching to validate bad eamils
     }
 
     // Clear console

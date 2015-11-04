@@ -28,6 +28,7 @@ public class Student
     private int grade1;
     private int grade2;
     private int grade3;
+    private double average;
 
     // B.2.c. base constructor
     // Used for clear screen and color
@@ -47,6 +48,7 @@ public class Student
         this.grade1 = grade1;
         this.grade2 = grade2;
         this.grade3 = grade3;
+        this.average = (grade1+grade2+grade3)/3;
         //  this.grades = grades; // Remove this line before submission
         // System.out.println("Full constructor: " + studentID + " " + firstName + " " + lastName + " " + emailAddress + " " + age + " " + grade1 + " " + grade2 + " " + grade3);
         // toString();
@@ -62,6 +64,7 @@ public class Student
     public int getGrade1() {return grade1; }
     public int getGrade2() {return grade2; }
     public int getGrade3() {return grade3; }
+    public double getAverage() {return average; }
     // public ArrayList[] getGrades() {return grades; } // Remove this line before submission
 
     // B.2.a  -  Starting Setters: (mutators)
