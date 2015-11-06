@@ -6,14 +6,13 @@
  *     constructor(s)
  *     accessors
  *     setters
- * Include methods:
+ * Include methods for:
  *     toString
  *     print
  *     clear screen
  *     color list
  * @author (Lance Eddleman)
- * @version (v 1.0)
- * @since 09-01-2015)
+ * @version (v 1.0 - 09/01/2015)
  */
 
 public class Student
@@ -92,7 +91,7 @@ public class Student
     public void setGrade3(int grade3) { this.grade3 = grade3; }
 
     /**
-     * Clear Console - (Additional method)
+     * Additional
      * Code used to clear console (debugging, testing)
      * Information from: http://www.bluej.org/faq.html (BlueJ Features)
      */
@@ -127,7 +126,7 @@ public class Student
     }
 
     /**
-     * Rubicon B2d.
+     * Rubicon B3c.
      * Creates a single line TAB style print method
      * Provide a complete tab-separated list of student data using accessor methods.
      */
