@@ -1,0 +1,24 @@
+Student Roster (Tabbed)
+1	First Name: John	Last Name: Smith	EMail: John1989@gmail.com	Age: 20	Grades: {88, 79, 59}
+2	First Name: Suzan	Last Name: Erickson	EMail: Erickson_1990@gmailcom	Age: 19	Grades: {91, 72, 85}
+3	First Name: Jack	Last Name: Napoli	EMail: The_lawyer99yahoo.com	Age: 19	Grades: {85, 84, 87}
+4	First Name: Erin	Last Name: Black	EMail: Erin.black@comcast.net	Age: 22	Grades: {91, 98, 82}
+5	First Name: Lance	Last Name: Eddleman	EMail: leddlem@my.wgu.edu	Age: 45	Grades: {76, 85, 20}
+
+Invalid Student Email Addresses (Formatted)
+ID    First Name      Email Address             Missing   
+2     Suzan           Erickson_1990@gmailcom       .  
+3     Jack            The_lawyer99yahoo.com        @ 
+
+Student Average Grade (Formatted)
+ID    First Name      Grade1   Grade2   Grade3   [Average] 
+1     John              88       79       59       75.0
+2     Suzan             91       72       85       82.0
+3     Jack              85       84       87       85.0
+4     Erin              91       98       82       90.0
+5     Lance             76       85       20       60.0
+
+Student ID: 3 was removed
+
+Student ID: 3 doesn't exist
+

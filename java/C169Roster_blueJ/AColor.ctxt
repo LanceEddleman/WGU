@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ color()
+comment0.text=\n\ Color\ information\ found\ at\:\n\ http\://stackoverflow.com/questions/7091003/show-system-out-println-output-with-another-color\n\ https\://en.wikipedia.org/wiki/ANSI_escape_code\n\ Example\ information\ for\ ansi\ color\ codes\ (working\ with\ intelliJ\ but\ not\ in\ BlueJ\n
+numComments=1

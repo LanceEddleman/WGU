@@ -6,13 +6,14 @@
  *     constructor(s)
  *     accessors
  *     setters
- * Include methods for:
+ * Include methods:
  *     toString
  *     print
  *     clear screen
  *     color list
  * @author (Lance Eddleman)
- * @version (v 1.0 - 09/01/2015)
+ * @version (v 1.0)
+ * @since 09-01-2015)
  */
 
 public class Student
@@ -91,29 +92,12 @@ public class Student
     public void setGrade3(int grade3) { this.grade3 = grade3; }
 
     /**
-     * Additional
+     * Clear Console - (Additional method)
      * Code used to clear console (debugging, testing)
      * Information from: http://www.bluej.org/faq.html (BlueJ Features)
      */
     public static void cls() //cleans console prior to next test
     { System.out.print('\u000C'); }
-
-    /**
-     * Color information found at:
-     * http://stackoverflow.com/questions/7091003/show-system-out-println-output-with-another-color
-     * https://en.wikipedia.org/wiki/ANSI_escape_code
-     * Example information for ansi color codes (working with intelliJ but not in BlueJ
-    */
-    public static void color() {
-        System.out.println("\033[0m BLACK");
-        System.out.println("\033[31m RED");
-        System.out.println("\033[32m GREEN");
-        System.out.println("\033[33m YELLOW");
-        System.out.println("\033[34m BLUE");
-        System.out.println("\033[35m MAGENTA");
-        System.out.println("\033[36m CYAN");
-        System.out.println("\033[37m WHITE");
-    }
 
     /**
      * Returns string object that can be printed via the print() method if desired
@@ -126,7 +110,7 @@ public class Student
     }
 
     /**
-     * Rubicon B3c.
+     * Rubicon B2d.
      * Creates a single line TAB style print method
      * Provide a complete tab-separated list of student data using accessor methods.
      */
