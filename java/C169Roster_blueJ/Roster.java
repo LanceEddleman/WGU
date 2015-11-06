@@ -110,9 +110,9 @@ public class Roster
         newS.setLastName(lastName);
         newS.setEmailAddress(emailAddress);
         newS.setAge(age);
-        newS.setGrade1(grade1);
-        newS.setGrade2(grade2);
-        newS.setGrade3(grade3);
+        newS.setGrade(grade1,0);
+        newS.setGrade(grade1,1);
+        newS.setGrade(grade1,2);
         studentArrayList.add(newS);
     }
 
@@ -162,8 +162,9 @@ public class Roster
         System.out.println("Print All Student(s) Information");
 
         for(int i = 0; i<studentArrayList.size(); i++) //Suggested print format [tabs]
-        {   Student s = studentArrayList.get(i);
-            System.out.println(s.getStudentID() + "\tFirst Name: " + s.getFirstName() + "\tLast Name: " + s.getLastName() + "\tEMail: " + s.getEmailAddress() + "\tAge: " + s.getAge() + "\tGrades: {" + s.getGrade1() + ", " + s.getGrade2() + ", " + s.getGrade3() + "}");
+        {
+            Student s = studentArrayList.get(i);
+            System.out.println(s.getStudentID() + "\tFirst Name: " + s.getFirstName() + "\tLast Name: " + s.getLastName() + "\tEMail: " + s.getEmailAddress() + "\tAge: " + s.getAge() + "\tGrades: {" + s.getGradeIndex(0) + ", " + s.getGradeIndex(1) + ", " + s.getGradeIndex(2) + "}");
         }
         System.out.println();
     }
@@ -178,8 +179,9 @@ public class Roster
         System.out.println("Student Roster (Formatted)");
         System.out.printf("%-5s %-15s %-15s %-25s %-6s %-8s %-8s %-8s\n", "ID", "First Name", "Last Name", "EMail Address", "Age", "Grade1", "Grade2", "Grade3");
         for(int i = 0; i<studentArrayList.size(); i++)
-        {   Student a = studentArrayList.get(i);
-            System.out.printf("%-5s %-15s %-15s %-25s %-6s %4s %8s %8s\n", a.getStudentID(), a.getFirstName(), a.getLastName(), a.getEmailAddress(), a.getAge(), a.getGrade1(), a.getGrade2(), a.getGrade3());
+        {
+            Student a = studentArrayList.get(i);
+            System.out.printf("%-5s %-15s %-15s %-25s %-6s %4s %8s %8s\n", a.getStudentID(), a.getFirstName(), a.getLastName(), a.getEmailAddress(), a.getAge(), a.getGradeIndex(0), a.getGradeIndex(1), a.getGradeIndex(2));
         }
         System.out.println();
     }
@@ -196,17 +198,6 @@ public class Roster
     public static void print_Student(int ID) {
         Student s = studentArrayList.get(ID-1);
         s.print();
-/*
-        // Prints a tab-separated list of a specific student based on passed sutdentID.
-        System.out.println("Suggested print format [tabs]");
-        System.out.println(s.getStudentID() + "\tFirst Name: " + s.getFirstName() + "\tLast Name: " + s.getLastName() + "\teMail: " + s.getEmailAddress() + "\tAge: " + s.getAge() + "\tGrades: {" + s.getGrade1() + ", " + s.getGrade2() + ", " + s.getGrade3() + "}");
-        System.out.println();
-
-        // Prints string formatted list for a specific student based on passed sutdentID.
-        System.out.println("Preferred print format [field formatting]");
-        System.out.printf("%-5s %-15s %-15s %-25s %-6s %-8s %-8s %-8s\n", "ID", "First Name", "Last Name", "eMail", "Age", "Grade1", "Grade2", "Grade3");
-        System.out.printf("%-5s %-15s %-15s %-25s %-6s %4s %8s %8s\n", s.getStudentID(), s.getFirstName(), s.getLastName(), s.getEmailAddress(), s.getAge(), s.getGrade1(), s.getGrade2(), s.getGrade3());
-*/
         System.out.println();
     }
 
@@ -228,12 +219,12 @@ public class Roster
         for (int i = 0; i < studentArrayList.size(); i++) {
             Student a = studentArrayList.get(i);
                 if(a.getAverage() >= 70.0){
-                    System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(), a.getFirstName(), a.getGrade1(),
-                            a.getGrade2(), a.getGrade3(), a.getAverage());
+                    System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(), a.getFirstName(), a.getGradeIndex(0),
+                            a.getGradeIndex(1), a.getGradeIndex(2), a.getAverage());
                 }
                 else{
-                    System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(), a.getFirstName(), a.getGrade1(),
-                            a.getGrade2(), a.getGrade3(), a.getAverage());
+                    System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(), a.getFirstName(), a.getGradeIndex(0),
+                            a.getGradeIndex(1), a.getGradeIndex(2), a.getAverage());
                 }
         }
         System.out.println();
@@ -260,14 +251,14 @@ public class Roster
             Student a = studentArrayList.get(i);
             if (a.getStudentID().equals(studentID)) {
                 if(a.getAverage() >= 70.0){
-                    System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(), a.getFirstName(), a.getGrade1(),
-                            a.getGrade2(), a.getGrade3(), a.getAverage());
+                    System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(), a.getFirstName(), a.getGradeIndex(0),
+                            a.getGradeIndex(1), a.getGradeIndex(2), a.getAverage());
                     System.out.println();
                     return;
                 }
                 else{
-                    System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(), a.getFirstName(), a.getGrade1(),
-                            a.getGrade2(), a.getGrade3(), a.getAverage());
+                    System.out.printf("%-5s %-15s %4s %8s %8s %10s\n", a.getStudentID(), a.getFirstName(), a.getGradeIndex(0),
+                            a.getGradeIndex(1), a.getGradeIndex(2), a.getAverage());
                     System.out.println();
                     return;
                 }

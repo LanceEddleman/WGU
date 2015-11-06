@@ -27,9 +27,7 @@ public class Student
     private String lastName;
     private String emailAddress;
     private int age;
-    private int grade1;
-    private int grade2;
-    private int grade3;
+    private int[] grades = new int[3];
 
     /**
      * Rubicon B2c.
@@ -49,9 +47,9 @@ public class Student
         this.lastName = lastName;
         this.emailAddress = emailAddress;
         this.age = age;
-        this.grade1 = grade1;
-        this.grade2 = grade2;
-        this.grade3 = grade3;
+        this.grades[0] = grade1;
+        this.grades[1] = grade2;
+        this.grades[2] = grade3;
     }
 
     /**
@@ -73,10 +71,8 @@ public class Student
     public String getLastName() { return lastName; }
     public String getEmailAddress() { return emailAddress; }
     public int getAge() { return age; }
-    public int getGrade1() {return grade1; }
-    public int getGrade2() {return grade2; }
-    public int getGrade3() {return grade3; }
-    public double getAverage() {return (grade1+grade2+grade3)/3; }
+    public int getGradeIndex(int i) {return grades[i];}
+    public double getAverage() {return (grades[0]+grades[1]+grades[2])/grades.length; }
 
     /**
      * Rubicon B2b.
@@ -87,9 +83,10 @@ public class Student
     public void setLastName(String lastName) { this.lastName = lastName; }
     public void setEmailAddress(String emailAddress) { this.emailAddress = emailAddress; }
     public void setAge(int age) { this.age = age; }
-    public void setGrade1(int grade1) { this.grade1 = grade1; }
-    public void setGrade2(int grade2) { this.grade2 = grade2; }
-    public void setGrade3(int grade3) { this.grade3 = grade3; }
+    public void setGrade(int grade, int gIndex) {
+        this.grades[gIndex] = grade;
+    }
+
 
     /**
      * Clear Console - (Additional method)
@@ -106,7 +103,7 @@ public class Student
      * @return  full Student record as a string
      */
     public String toString() {
-        return getStudentID() + "\tFirst Name: " + getFirstName() + "\tLast Name: " + getLastName() + "\tEMail: " + getEmailAddress() + "\tAge: " + getAge() + "\tGrades: {" + getGrade1() + ", " + getGrade2() + ", " + getGrade3() + "}";
+        return getStudentID() + "\tFirst Name: " + getFirstName() + "\tLast Name: " + getLastName() + "\tEMail: " + getEmailAddress() + "\tAge: " + getAge() + "\tGrades: {" + getGradeIndex(0) + ", " + getGradeIndex(1) + ", " + getGradeIndex(2) + "}";
     }
 
     /**
@@ -116,7 +113,7 @@ public class Student
      */
     public void print() {
         // System.out.println(toString());
-        String s = getStudentID() + "\tFirst Name: " + getFirstName() + "\tLast Name: " + getLastName() + "\tEMail: " + getEmailAddress() + "\tAge: " + getAge() + "\tGrades: {" + getGrade1() + ", " + getGrade2() + ", " + getGrade3() + "}";
+        String s = getStudentID() + "\tFirst Name: " + getFirstName() + "\tLast Name: " + getLastName() + "\tEMail: " + getEmailAddress() + "\tAge: " + getAge() + "\tGrades: {" + getGradeIndex(0) + ", " + getGradeIndex(1) + ", " + getGradeIndex(2) + "}";
         System.out.println(s);
     }
 
